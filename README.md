@@ -7,26 +7,26 @@ This project implements a custom oversampling technique designed to handle class
 Class imbalance is a common challenge in data mining where one class significantly outperforms another in frequency, leading to biased models. This project provides a custom implementation of an oversampling strategy, similar to SMOTE, to balance datasets effectively before training.
 
 ### How it Works
-[cite_start]The algorithm follows a 4-step process for each synthetic sample generated [cite: 76-84]:
-1. **Random Selection:** Picks a point $p$ from the minority class.
-2. **Neighbor Identification:** Finds the $k$ nearest neighbors of $p$ within the minority class.
+The algorithm follows a 4-step process for each synthetic sample generated
+1. **Random Selection:** Picks a point p from the minority class.
+2. **Neighbor Identification:** Finds the k nearest neighbors of p within the minority class.
 3. **Random Neighbor Selection:** Randomly selects one neighbor from the identified group.
-4. **Linear Interpolation:** Creates a new synthetic sample $s$ using the formula:
+4. **Linear Interpolation:** Creates a new synthetic sample s using the formula:
    $$s = p + (neighbor - p) \times gap$$
-   *Where $gap$ is a random value between 0 and 1.*
+   *Where gap is a random value between 0 and 1.*
 
 
 
 ## ✨ Features
 
-* [cite_start]**Custom Algorithm:** Independent implementation using `numpy` and `sklearn.neighbors`[cite: 16, 19].
-* [cite_start]**Synthetic Data Generation:** Includes a utility to generate 5 types of geometric distributions: Circles, Moons, Blobs, Mixed Classification, and Gaussian Quantiles [cite: 18, 216-221].
-* [cite_start]**Performance Benchmarking:** Compares **Decision Tree** and **KNN** classifiers before and after resampling [cite: 20-21, 134-137].
-* [cite_start]**Visualization:** Generates 3-panel plots showing data distribution (Before/After) and ROC curve analysis [cite: 17, 154-174].
+**Custom Algorithm:** Independent implementation using `numpy` and `sklearn.neighbors`.
+**Synthetic Data Generation:** Includes a utility to generate 5 types of geometric distributions: Circles, Moons, Blobs, Mixed Classification, and Gaussian Quantiles.
+**Performance Benchmarking:** Compares **Decision Tree** and **KNN** classifiers before and after resampling.
+**Visualization:** Generates 3-panel plots showing data distribution (Before/After) and ROC curve analysis.
 
 ## 📊 Results
 
-The algorithm consistently improves the **Recall** and **F1-Score** for imbalanced datasets. [cite_start]For example, in the Gaussian Quantiles test, the KNN Recall improved from **0.82 to 0.97** after applying the custom oversampling[cite: 233].
+The algorithm consistently improves the **Recall** and **F1-Score** for imbalanced datasets. For example, in the Gaussian Quantiles test, the KNN Recall improved from **0.82 to 0.97** after applying the custom oversampling.
 
 | Metric | Before Resampling | After Resampling |
 | :--- | :---: | :---: |
@@ -39,3 +39,20 @@ The algorithm consistently improves the **Recall** and **F1-Score** for imbalanc
 1. Clone the repository:
    ```bash
    git clone [https://github.com/username/custom-knn-oversampling-algorithm.git](https://github.com/username/custom-knn-oversampling-algorithm.git)
+
+## 📁 Project Structure
+
+```text
+custom-knn-oversampling-algorithm/
+│
+├── src/
+│   ├── datasets/        # Synthetic dataset generation
+│   ├── sampling/        # Custom KNN-based oversampling algorithm
+│   ├── models/          # Model training and evaluation
+│   ├── evaluation/      # Performance comparison logic
+│   ├── visualization/   # Plots and ROC analysis
+│   └── config.py        # Experiment configurations
+│
+├── main.py              # Entry point
+├── requirements.txt
+└── README.md
