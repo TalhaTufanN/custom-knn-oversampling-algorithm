@@ -34,6 +34,24 @@ The algorithm consistently improves the **Recall** and **F1-Score** for imbalanc
 | Recall | 0.8163 | 0.9704 |
 | F1-Score | 0.8889 | 0.9668 |
 
+## 📈 Visualization Results
+
+### Circles Dataset
+![Circles Dataset Results](assets/Figure_1.png)
+
+### Moons Dataset
+![Moons Dataset Results](assets/Figure_2.png)
+
+### Blobs Dataset
+![Blobs Dataset Results](assets/Figure_3.png)
+
+### Mixed Dataset
+![Mixed Dataset Results](assets/Figure_4.png)
+
+### Gaussian Dataset
+![Gaussian Dataset Results](assets/Figure_5.png)
+
+
 ## 🛠️ Installation
 
 1. Clone the repository:
